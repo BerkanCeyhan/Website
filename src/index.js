@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './App.js';
 import reportWebVitals from './reportWebVitals';
+import {ChakraProvider} from "@chakra-ui/react";
+import { ColorModeScript } from "@chakra-ui/react"
+import theme from "./theme";
+import "@fontsource/adamina";
+import "@fontsource/m-plus-rounded-1c";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <ChakraProvider theme={theme}>
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+          <App />
+
+      </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
